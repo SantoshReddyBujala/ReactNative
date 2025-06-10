@@ -1,9 +1,12 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
+// Main app component that displays a name and a 3x4 grid of numbers
 const app = ({ name = "Santosh Reddy Bujala" }) => {
   return (
+    // Container for the entire screen
     <View style={styles.container}>
+      {/* Display the name with accessibility support */}
       <Text
         style={styles.text}
         accessible={true}
@@ -11,14 +14,18 @@ const app = ({ name = "Santosh Reddy Bujala" }) => {
       >
         {name}
       </Text>
+      {/* Grid container */}
       <View style={styles.grid}>
+        {/* Render 12 grid items (numbers 1 to 12) */}
         {Array.from({ length: 12 }, (_, index) => (
+          // Each grid item with accessibility label
           <View
             key={index}
             style={styles.gridItem}
             accessible={true}
             accessibilityLabel={`Grid item ${index + 1}`}
           >
+            {/* Display the grid number */}
             <Text style={styles.gridItemText}>{index + 1}</Text>
           </View>
         ))}
@@ -27,12 +34,14 @@ const app = ({ name = "Santosh Reddy Bujala" }) => {
   );
 };
 
+// Default prop for name if not provided
 app.defaultProps = {
   name: "Santosh Reddy Bujala",
 };
 
 export default app;
 
+// Styles for the component
 const styles = StyleSheet.create({
   container: {
     flex: 1,
