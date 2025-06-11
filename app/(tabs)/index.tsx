@@ -30,6 +30,7 @@ const app = ({ name = "Santosh Reddy Bujala" }) => {
           </View>
         ))}
       </View>
+      <View></View>
     </View>
   );
 };
